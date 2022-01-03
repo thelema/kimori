@@ -1,11 +1,26 @@
 # The URL the site will be built for
 base_url = "https://www.kimoridojo.com"
 
+# Whether to automatically construct RSS
+generate_feed = true
+feed_filename = "rss.xml"
+
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = false
+title = "Kimori Dojo SVB"
+description = "Kimori Aikido Dojo, Silicon Valley Branch"
+
+theme = "zola-clean-blog"
+
+paginate_by = 5
+taxonomies = [
+#    {name = "content.pages", rss = true, paginate_by = 5},
+    {name = "categories", rss = true, paginate_by = 5},
+    {name = "tags", rss = true, paginate_by = 5},
+]
 
 [markdown]
 # Whether to do syntax highlighting
@@ -14,3 +29,14 @@ highlight_code = false
 
 [extra]
 # Put all your custom variables here
+
+author = "Eric"
+clean_blog_menu = [
+    {url = "$BASE_URL", name = "Home"},
+    {url = "$BASE_URL/about", name = "About"},
+    {url = "$BASE_URL/contact", name = "Contact"}
+]
+clean_blog_social = [
+    {url = "https://twitter.com", icon="fab fa-twitter"},
+    {url = "$BASE_URL/rss.xml", icon="fas fa-rss"}
+]
